@@ -24,7 +24,6 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(paths.js)
-    .pipe(uglify())
     .on('error', emitError)
     .pipe(gulp.dest(prod.scripts));
 });
