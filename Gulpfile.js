@@ -18,12 +18,14 @@ gulp.task('styles', function() {
     .pipe(sass({
       includePaths: ['styles'].concat(neat)
     }))
+    .on('error', emitError)
     .pipe(gulp.dest('styles'));
 });
 
 gulp.task('scripts', function() {
   return gulp.src(paths.js)
     .pipe(uglify())
+    .on('error', emitError)
     .pipe(gulp.dest(prod.scripts));
 });
 
@@ -36,3 +38,8 @@ gulp.task('default', function() {
   gulp.start('styles');
   gulp.start('scripts');
 });
+
+function emitError() {
+  console.log("Compiliation error");
+  this.emit('end');
+}
