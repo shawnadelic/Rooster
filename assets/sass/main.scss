@@ -1,2 +1,50 @@
 @import 'bourbon';
 @import 'neat';
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.outer-wrapper {
+  @include outer-container;
+}
+
+.page {
+  color: white;
+  height: 100%;
+}
+
+.section-body {
+  height: 100%;
+}
+
+.page-home {
+  background-color: red;
+}
+
+.page-about {
+  background-color: blue;
+}
+
+.ng-enter {
+  @include animation(slideUpIn 1s ease-out);
+  z-index: 8888;
+}
+
+.ng-leave {
+  @include animation(slideUpOut 1s ease-out);
+  z-index: 9999;
+}
+
+@include keyframes(slideUpIn) {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0%); }
+}
+
+@include keyframes(slideUpOut) {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}

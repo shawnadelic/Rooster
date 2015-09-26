@@ -1,17 +1,22 @@
 <!doctype html>
-<html ng-app="roosterhead">
+<html ng-app="rooster">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js"></script>
+    <script src="scripts/app.js"></script>
     <base href="/roosterhead/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-  <a href="./">Home</a>
-  <a href="about/">About</a>
-  <div ng-view></div>
+    <div class="section section-header">
+    </div>
+    <div class="section section-body">
+      <div class="page {{ pageClass }}" ng-view></div>
+    </div>
+    <div class="section section-footer">
+    </div>
   </body>
 </html>
